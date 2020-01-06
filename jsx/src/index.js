@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 const App = () => {
     return (
         <div>
-            <label for="name">Enter Name</label>
+            <label className="label" for="name">Enter Name</label>
             <input type="text" name="name" id="name"></input>
             <button type="submit" style={{backgroundColor:'blue',color:'white'}}>Submit</button>
         </div>);
