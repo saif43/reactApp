@@ -6,12 +6,18 @@ import ReactDOM from 'react-dom';
 // create a react comnonent 
 
 // function based component
+
+function getPlaceHolder(){
+    return 'Type your name';
+}
+
 const App = () => {
+    const buttonName = "Click me";
     return (
         <div>
-            <label for="name">Enter Name</label>
-            <input type="text" name="name" id="name"></input>
-            <button type="submit" style={{backgroundColor:'blue',color:'white'}}>Submit</button>
+            <label for="name">Name</label>
+            <input type="text" placeholder={{getPlaceHolder()}} name="name" id="name"></input>
+            <button type="submit" style={{backgroundColor:'blue',color:'white'}}>{{buttonName}}</button>
         </div>);
 };
 
