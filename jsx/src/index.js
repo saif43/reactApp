@@ -16,7 +16,7 @@ const App = () => {
     
     return (
         <div>
-            <label for="name">Name</label>
+            <label className="label" htmlFor="name">Name</label>
             <input type="text" placeholder={inputObject.placeholder} name={inputObject.text} id={inputObject.text}></input>
             <button type="submit" style={{backgroundColor:'blue',color:'white'}}>{getButtonName()}</button>
         </div>);
