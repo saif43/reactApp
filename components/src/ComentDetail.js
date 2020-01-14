@@ -1,21 +1,22 @@
-import React from 'react';
-import faker from 'faker';
+import React from "react";
 
-const CommentDetail = () => {
-    return (
-        <div className="comment">
-            <a href="/" className="avatar">
-                <img alt="avater" src={faker.image.avatar()} />
-            </a>
-            <div className="content">
-                <a href="/" className="author">{faker.name.firstName() + " " + faker.name.lastName()}</a>
-                <div className="metadata">
-                    <span className="date">Today at 6.00PM</span>
-                </div>
-                <div className="text">Nice blog post!</div>
-            </div>
+const CommentDetail = user => {
+  return (
+    <div className="comment">
+      <a href="/" className="avatar">
+        <img alt="avater" src={user.image} />
+      </a>
+      <div className="content">
+        <a href="/" className="author">
+          {user.name}
+        </a>
+        <div className="metadata">
+          <span className="date">{user.postingTime}</span>
         </div>
-    );
-}
+        <div className="text">{user.comment}</div>
+      </div>
+    </div>
+  );
+};
 
 export default CommentDetail;
