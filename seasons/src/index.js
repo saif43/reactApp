@@ -10,6 +10,9 @@ class App extends React.Component {
       errorMessage : ''
     };
 
+  }
+
+  componentDidMount(){
     window.navigator.geolocation.getCurrentPosition(
       location => {
         this.setState({
@@ -22,6 +25,10 @@ class App extends React.Component {
         });
       }
     );
+  }
+  
+  componentDidUpdate(){
+    console.log("Component was updated");
   }
 
   render() {
