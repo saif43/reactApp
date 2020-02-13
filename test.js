@@ -1,3 +1,20 @@
-let x = new Date().toLocaleDateString();
+class Car{
+    setDriveSound(sound) {
+        this.sound = sound;
+    }
 
-console.log(x);
+    drive(){
+        return this.sound;
+    }
+}
+
+const car = new Car();
+
+car.setDriveSound('vroom');
+
+const truck = {
+    sound: 'putpuput',
+    driveTruck : car.drive
+}
+
+console.log(truck.driveTruck());
