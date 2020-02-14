@@ -1,6 +1,9 @@
 https://stackoverflow.com/questions/47675478/npm-install-errorunexpected-end-of-json-input-while-parsing-near-nt-webpack
 
 
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
 onSearchSubmit(term){
     axios.get('https://api.unsplash.com/search/photos', {
       params: {
@@ -28,3 +31,45 @@ async onSearchSubmit(term){
 
     console.log(response);
   }
+
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+
+React npm start problem solution
+
+Method 0
+https://stackoverflow.com/questions/47467126/error-in-starting-react-project
+
+
+Method 1
+Step 1: $ npm cache clean --force
+
+Step 2: Delete node_modules by $ rm -rf node_modules folder or delete it manually by going into the directory and right-click > delete / move to trash. Also, delete package-lock.json file too.
+
+Step 3: npm install
+
+To start again, $ npm start
+
+
+Method 2
+npm cache clean --force
+delete node_modules folder
+delete package-lock.json file
+npm install
+
+
+
+Method 3
+Delete your package-lock.json file and node_modules folder. Then do npm cache clean
+
+npm cache clean --force
+do npm install
+
+again and run
+
+
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
