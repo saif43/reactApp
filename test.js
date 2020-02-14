@@ -1,20 +1,5 @@
-class Car{
-    setDriveSound(sound) {
-        this.sound = sound;
-    }
+number = [0,1,2,3,4,5];
 
-    drive(){
-        return this.sound;
-    }
-}
+number = number.map(num => num*10);
 
-const car = new Car();
-
-car.setDriveSound('vroom');
-
-const truck = {
-    sound: 'putpuput',
-    driveTruck : car.drive
-}
-
-console.log(truck.driveTruck());
+console.log(number);
