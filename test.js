@@ -1,5 +1,4 @@
-number = [0,1,2,3,4,5];
+let  people = { id: 4 ,firstName: 'John'};
+people = { ...people, secondName: 'Fogerty'};
 
-number = number.map(num => num*10);
-
-console.log(number);
+console.log(people);
