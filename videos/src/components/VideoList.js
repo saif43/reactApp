@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import VideoItem from "./VideoItem";
 
-export default class VideoList extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+const VideoList = ({ videos }) => {
+  const renderedVideos = videos.map(video => {
+    return <VideoItem />;
+  });
+
+  return renderedVideos;
+};
+
+export default VideoList;
