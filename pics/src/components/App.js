@@ -1,5 +1,6 @@
 import React from "react";
 import unsplash from "../api/unsplash";
+import idgenerator from "../api/idgenerator";
 import Searchbar from "./SearchBar";
 import ImageList from "./ImageList";
 
@@ -15,6 +16,16 @@ class App extends React.Component {
 
     this.setState({ images: response.data.results });
   };
+
+  componentDidMount(){
+    const response = idgenerator.get("user/profile", {
+      params: {
+        request_type: "All"
+      }
+    });
+
+    console.log(response);
+  }
 
   render() {
     return (
