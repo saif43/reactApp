@@ -17,14 +17,16 @@ class App extends React.Component {
     this.setState({ images: response.data.results });
   };
 
-  componentDidMount(){
-    const response = idgenerator.get("user/profile", {
-      params: {
-        request_type: "All"
-      }
-    });
-
-    console.log(response);
+  componentDidMount() {
+    idgenerator
+      .get("user/profile", {
+        params: {
+          request_type: "All"
+        }
+      })
+      .then(function(result) {
+        console.log(result.data.all_users_data);
+      });
   }
 
   render() {
