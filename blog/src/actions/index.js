@@ -1,4 +1,5 @@
 import jsonPlaceHolder from "./../apis/jsonPlaceHolder";
+import _ from "lodash";
 
 /*
 export const fetchPosts = () => {
@@ -17,8 +18,19 @@ export const fetchPosts = () => async dispatch => {
   dispatch({ type: "FETCH_POST", payload: response.data });
 };
 
-export const getUser = userid => async dispatch => {
+//---------------------------------------------------------
+
+// // calling API multiple time for each id
+// export const getUser = userid => async dispatch => {
+//   const response = await jsonPlaceHolder.get(`users/${userid}`);
+
+//   dispatch({ type: "GET_USER", payload: response.data });
+// };
+
+// if database changes, we are not gonna get changed value in this solution
+export const getUser = userid => dispatch => _getUser(userid, dispatch);
+const _getUser = _.memoize(async (userid, dispatch) => {
   const response = await jsonPlaceHolder.get(`users/${userid}`);
 
   dispatch({ type: "GET_USER", payload: response.data });
-};
+});
