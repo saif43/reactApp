@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUser } from "./../actions";
 
 class UserHeader extends Component {
-  componentDidMount() {
-    this.props.getUser(this.props.userid);
-  }
-
   render() {
     const { user } = this.props;
 
@@ -14,7 +9,7 @@ class UserHeader extends Component {
       return <div className="header">{user.name}</div>;
     }
 
-    return <div className="header">Not found</div>;
+    return <div className="header">Loading</div>;
   }
 }
 
@@ -24,4 +19,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { getUser })(UserHeader);
+export default connect(mapStateToProps)(UserHeader);
