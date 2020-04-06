@@ -4,7 +4,7 @@ import {
   DELETE_STREAM,
   UPDATE_STREAM,
   FETCH_ALL_STREAMS,
-  FETCH_SINGLE_STREAM
+  FETCH_SINGLE_STREAM,
 } from "./../actions/types";
 
 export default (state = {}, action) => {
