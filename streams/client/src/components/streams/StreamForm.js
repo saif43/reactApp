@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 
-class StreamCreate extends Component {
+class StreamForm extends Component {
   renderError(meta) {
-    if (meta.touched) {
+    if (meta.touched && meta.error) {
       return (
         <div className="ui error message">
           <div className="header">{meta.error}</div>
@@ -13,8 +13,8 @@ class StreamCreate extends Component {
   }
 
   /*using arrow function to access renderError function of our 
-  StreamCreate class. 
-  Or our app will confuese between "this" of StreamCreate class and
+  StreamForm class. 
+  Or our app will confuese between "this" of StreamForm class and
   "this" of Field component
   */
   renderTextInput = formProps => {
@@ -74,11 +74,11 @@ const validate = formValues => {
 export default reduxForm({
   form: "streamForm",
   validate
-})(StreamCreate);
+})(StreamForm);
 
 // const formWrapped = reduxForm({
-//   form: "streamCreate",
+//   form: "StreamForm",
 //   validate
-// })(StreamCreate);
+// })(StreamForm);
 
 // export default connect(null, { createStream })(formWrapped);
