@@ -21,18 +21,6 @@
       "description": "Description of stream 4",
       "userid": "112220686498799184940",
       "id": 4
-    },
-    {
-      "title": "Stream 5",
-      "description": "Description of stream 5",
-      "userid": "112220686498799184940",
-      "id": 5
-    },
-    {
-      "title": "Stream 6",
-      "description": "Description of stream 6",
-      "userid": "112220686498799184940",
-      "id": 6
     }
   ]
 }
