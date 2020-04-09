@@ -8,6 +8,10 @@ const counterReducer = (state = initialState, action) => {
       return { ...state, count: (state.count += 1) };
 
     case "DECREASE":
+      if(state.count === 0){
+        return state
+      }
+
       return { ...state, count: (state.count -= 1) };
 
     default:
