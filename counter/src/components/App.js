@@ -4,7 +4,6 @@ import { increment, decrement } from "../actions";
 
 class App extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="ui grid">
         <div className="ui row">
@@ -44,9 +43,9 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  //   console.log(state);
+  console.log(state);
   return {
-    count: state.counter
+    count: state.counter.count
   };
 };
 
