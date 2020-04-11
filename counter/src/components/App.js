@@ -1,51 +1,34 @@
 import React from "react";
 import { connect } from "react-redux";
 import { increment, decrement } from "../actions";
+import "./App.css";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="ui grid">
-        <div className="ui row">
-          <div className="column six wide">
-            <table className="ui celled table">
-              <tbody>
-                <tr>
-                  <td data-label="Name">{this.props.count}</td>
-                  <td data-label="Age">
-                    <button
-                      className="ui green basic button"
-                      onClick={() => {
-                        this.props.increment(this.props.count);
-                      }}
-                    >
-                      Increase
-                    </button>
-                  </td>
-                  <td data-label="Age">
-                    <button
-                      className="ui red basic button"
-                      onClick={() => {
-                        this.props.decrement(this.props.count);
-                      }}
-                    >
-                      Decrease
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="container">
+        <i
+          onClick={() => {
+            this.props.increment(this.props.count);
+          }}
+          class="far fa-plus-square fa-5x plus"
+        ></i>
+        <h1 class="counter">{this.props.count}</h1>
+        <i
+          onClick={() => {
+            this.props.decrement(this.props.count);
+          }}
+          class="far fa-minus-square fa-5x minus"
+        ></i>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   console.log(state);
   return {
-    count: state.counter.count
+    count: state.counter.count,
   };
 };
 

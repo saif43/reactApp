@@ -1,0 +1,18 @@
+body{
+    margin: 0px;
+}
+.container{
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+.plus{
+    margin-top: calc(32vh - 6px);
+    color: green;
+}
+.minus{
+    color: red;
+}
+.counter{
+    font-size: 50px;
+}
