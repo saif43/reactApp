@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
 import LoadSpinner from "./LoaderSpinner";
+import useLocation from "./useLocation";
 
 const App = () => {
-  const [lat, setLat] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
-  let content;
+  const [lat, errorMessage] = useLocation();
 
-  useState(() => {
-    window.navigator.geolocation.getCurrentPosition(
-      (location) => setLat(location.coords.latitude),
-      (err) => setErrorMessage(err)
-    );
-  }, []); // [] works as componentDidMount
+  let content;
 
   if (lat && !errorMessage) {
     content = <SeasonDisplay lat={lat} />;
