@@ -12,7 +12,9 @@ export const fetchData = async () => {
     const modifiedData = { confirmed, recovered, deaths, lastUpdate };
 
     return modifiedData;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const fetchDailyData = async () => {
@@ -27,4 +29,16 @@ export const fetchDailyData = async () => {
 
     return modifiedData;
   } catch (error) {}
+};
+
+export const fetchCountries = async () => {
+  try {
+    const { data } = await api.get("countries");
+
+    const modifiedData = data.countries.map((country) => country.name);
+
+    return modifiedData;
+  } catch (error) {
+    console.log(error);
+  }
 };
