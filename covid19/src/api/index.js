@@ -4,9 +4,15 @@ const api = axios.create({
   baseURL: "https://covid19.mathdro.id/api/",
 });
 
-export const fetchData = async () => {
+export const fetchData = async (country) => {
+  let changeableURL = "";
+
+  if (country) {
+    changeableURL = `countries/${country}`;
+  }
+
   try {
-    const response = await api.get();
+    const response = await api.get(changeableURL);
 
     const { confirmed, recovered, deaths, lastUpdate } = response.data;
     const modifiedData = { confirmed, recovered, deaths, lastUpdate };
