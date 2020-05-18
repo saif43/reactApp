@@ -11,3 +11,9 @@ export const decrement = count => {
     payload: count - 1
   };
 };
+
+export const reset = () => {
+  return {
+    type: "RESET",
+  };
+};

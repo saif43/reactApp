@@ -1,18 +1,32 @@
-body{
-    margin: 0px;
+body {
+  margin: 0px;
 }
-.container{
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
+.container {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
 }
-.plus{
-    margin-top: calc(32vh - 6px);
-    color: green;
+.plus {
+  margin-top: calc(32vh - 6px);
+  color: green;
 }
-.minus{
-    color: red;
+.minus {
+  color: red;
 }
-.counter{
-    font-size: 50px;
+.counter {
+  font-size: 50px;
+}
+
+.reset {
+  font-size: 20px !important;
+  margin-top: 30px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    -ms-transform: scale(1.5, 1.5); /* IE 9 */
+    transform: scale(1.5, 1.5); /* Standard syntax */
+  }
+
+  html, body {margin: 0; height: 100%; overflow: hidden}
 }
